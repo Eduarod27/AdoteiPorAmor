@@ -61,7 +61,7 @@ export async function deletarPet(idPet) {
     await salvarPets(listaFiltrada);
 
     return listaFiltrada;
-    
+
   } catch (error) {
     console.log('Erro ao deletar o pet')
   }

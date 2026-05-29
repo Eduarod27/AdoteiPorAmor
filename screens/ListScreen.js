@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
 export default function ListScreen({ navigation }) {
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pets Disponíveis 🐶🐱</Text>
