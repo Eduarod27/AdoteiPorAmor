@@ -33,3 +33,36 @@ export async function carregarPets() {
     return [];
   }
 }
+
+
+export async function adicionarPet(dadosPet) {
+  try {
+    const petsExistentes = await carregarPets();
+    const novoPet = {
+      id: Date.now().toString(),
+      ...dadosPet
+    };
+    petsExistentes.push(novoPet)
+    await salvarPets(petsExistentes)
+
+    return novoPet;
+  } catch (error) {
+    console.log('Erro ao adicionar o pet', error)
+  }
+}
+
+
+export async function deletarPet(idPet) {
+  try {
+    const petsExistentes = await carregarPets();
+
+    const listaFiltrada = petsExistentes.filter(pet => pet.id !== idPet)
+
+    await salvarPets(listaFiltrada);
+
+    return listaFiltrada;
+    
+  } catch (error) {
+    console.log('Erro ao deletar o pet')
+  }
+}
