@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import Card from '../components/Card';
 import { FlatList } from 'react-native-gesture-handler';
 
 export default function ListScreen({ navigation }) {
+
 
   const PETS_ESTATICOS = [
     { id: '1', nome: 'Pipoca', tipo: 'cachorro', idade: '2 anos', porte: 'Pequeno', localizacao: 'Boa Viagem, Recife', imagem: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600', descricao: 'A Pipoca é super dócil, ama brincar com crianças e já está vacinada e vermifugada. Perfeita para apartamento!' },

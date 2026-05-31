@@ -14,6 +14,11 @@ export default function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate('Lista')} 
         variant="primary"
       />
+      <Button 
+        title="Cadastrar Novo Pet" 
+        onPress={() => navigation.navigate('Cadastro')} 
+        color="#FF6B6B"
+      />
     </View>
   );
 }
@@ -24,18 +29,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center', 
     alignItems: 'center', 
     backgroundColor: '#FFF',
-    padding: 24 // Adicionamos um espaçamento nas laterais para o botão não colar na tela
+    padding: 20
   },
   title: { 
     fontSize: 28, 
     fontWeight: 'bold', 
     color: '#FF6B6B', 
-    marginBottom: 8 
+    marginBottom: 8, 
+    textAlign: 'center'
   },
   subtitle: { 
     fontSize: 16, 
     color: '#666', 
-    marginBottom: 32,
+    marginBottom: 30,
     textAlign: 'center'
   }
 });

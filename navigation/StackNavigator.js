@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ListScreen from '../screens/ListScreen';
 import DetailScreen from '../screens/DetailScreen';
 
+
+
 const Stack = createStackNavigator();
 
 export default function StackNavigator() {
