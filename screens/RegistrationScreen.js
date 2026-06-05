@@ -23,7 +23,6 @@ export default function RegistrationScreen({ navigation }) {
             navigation.goBack();
         } else {
             Alert.alert('Error, não foi possível cadastrar o pet')
-
         };
     };
 
