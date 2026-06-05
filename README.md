@@ -28,10 +28,9 @@ Foram implementados 3 sensores essenciais do dispositivo:
 
 ### Componentes e Navegação
 
-**Componentização**: Interface construída com componentes reutilizáveis, destacando-se o
- **Card** (para exibição unificada dos dados do pet na lista) e o 
- **Botão** customizado para ações e formulários.
- **Navegação**: Estruturada através de Stacks de Navegação, permitindo o avanço, retorno de páginas e envio de parâmetros entre rotas. O aplicativo conta ainda com um menu de abas persistente no rodapé (footer) para alternância rápida entre as telas.
+**Componentização**: Interface construída com componentes reutilizáveis, destacando-se o **Card** (para exibição unificada dos dados do pet na lista) e o **Botão** customizado para ações e formulários.
+ 
+**Navegação**: Estruturada através de Stacks de Navegação, permitindo o avanço, retorno de páginas e envio de parâmetros entre rotas. O aplicativo conta ainda com um menu de abas persistente no rodapé (footer) para alternância rápida entre as telas.
 
 ## Integrantes do Projeto
 

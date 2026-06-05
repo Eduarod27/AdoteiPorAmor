@@ -2,7 +2,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const STORAGE_KEY = '@pets';
 
-// Salva a lista de pets atualizada no dispositivo
 export async function salvarPets(pets) {
   try {
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(pets));
@@ -11,7 +10,6 @@ export async function salvarPets(pets) {
   }
 }
 
-// Carrega os pets salvos no dispositivo
 export async function carregarPets() {
   try {
     const dados = await AsyncStorage.getItem(STORAGE_KEY);
@@ -24,20 +22,11 @@ export async function carregarPets() {
 
 export async function adicionarPet(dadosPet) {
   try {
-    // 1. Pega os pets que já estão guardados (inclusive os 10 iniciais)
     const petsExistentes = await carregarPets();
     
     const novoPet = {
       id: Date.now().toString(),
-      nome: dadosPet.nome,
-      // Garante que 'Cão' vira 'cachorro' ou 'Gato' vira 'gato' para o seu ícone/Card funcionar
-      tipo: dadosPet.especie ? dadosPet.especie.toLowerCase().replace('cão', 'cachorro') : 'cachorro',
-      idade: dadosPet.idade,
-      porte: 'Médio', // Valor padrão temporário
-      localizacao: 'Recife', // Valor padrão temporário
-      imagem: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600', // Imagem padrão
-      descricao: `Contato do tutor: ${dadosPet.contato}`,
-      contato: dadosPet.contato
+      ...dadosPet
     };
 
     petsExistentes.unshift(novoPet);

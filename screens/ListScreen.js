@@ -8,8 +8,8 @@ import { carregarPets } from '../services/petService';
 export default function ListScreen({ navigation }) {
 
   const PETS_ESTATICOS = [
-    { id: '1', nome: 'Pipoca', tipo: 'cachorro', idade: '2 anos', porte: 'Pequeno', localizacao: 'Boa Viagem, Recife', imagem: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600', descricao: 'A Pipoca é super dócil, ama brincar com crianças e já está vacinada e vermifugada. Perfeita para apartamento!' },
-    { id: '2', nome: 'Mingau', tipo: 'gato', idade: '1 ano', porte: 'Médio', localizacao: 'Casa Caiada, Olinda', imagem: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600', descricao: 'Mingau é um gatinho calmo, companheiro e adora tirar um cochilo no sol. Já usa a caixa de areia perfeitamente.' },
+    { id: '1', nome: 'Pipoca', tipo: 'cachorro', idade: '2 anos', porte: 'Pequeno', localizacao: 'Boa Viagem, Recife', imagem: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600', descricao: 'A Pipoca é super dócil, ama brincar com crianças e já está vacinada e vermifugada. Perfeita para apartmento!' },
+    { id: '2', nome: 'Mingau', tipo: 'gato', idade: '1 ano', porte: 'Médio', localizacao: 'Casa Caiada, Olinda', imagem: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600', descricao: 'Mingau é um gatinho calmo, companheiro and adora tirar um cochilo no sol. Já usa a caixa de areia perfeitamente.' },
     { id: '3', nome: 'Mel', tipo: 'cachorro', idade: '3 anos', porte: 'Médio', localizacao: 'Espinheiro, Recife', imagem: 'https://tse1.mm.bing.net/th/id/OIP.YVb5ztypGSf2kb57StKz-QHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3', descricao: 'Mel é super carinhosa, cheia de energia e se dá muito bem com outros cães. Ama passear no parque!' },
     { id: '4', nome: 'Simba', tipo: 'gato', idade: '6 meses', porte: 'Pequeno', localizacao: 'Bairro Novo, Olinda', imagem: 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600', descricao: 'Simba é um filhotinho curioso e brincalhão. Muito ativo, vai encher sua casa de alegria e energia!' },
     { id: '5', nome: 'Thor', tipo: 'cachorro', idade: '4 anos', porte: 'Grande', localizacao: 'Madalena, Recife', imagem: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600', descricao: 'Thor é um excelente cão de guarda e incrivelmente leal à família. Precisa de espaço para correr e gastar energia.' },
@@ -65,17 +65,24 @@ export default function ListScreen({ navigation }) {
             ? 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600' 
             : 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600'; 
 
-          const petFormatado = {
+          let idadeFormatada = item.idade ? item.idade.trim() : '1 ano';
+          if (!idadeFormatada.toLowerCase().includes('ano') && !idadeFormatada.toLowerCase().includes('mes')) {
+            idadeFormatada = parseInt(idadeFormatada) === 1 ? `${idadeFormatada} ano` : `${idadeFormatada} anos`;
+          }
+
+          const petFormatated = {
             ...item,
             nome: `${item.nome} ${emoji}`,
+            idade: idadeFormatada,
+            porte: item.porte || 'Médio', 
             localizacao: item.localizacao ? item.localizacao.trim() : 'Jardim Atlântico, Olinda', 
             imagem: item.imagem || fotoPadrao 
           };
 
           return (
             <Card
-              pet={petFormatado}
-              onPress={() => navigation.navigate('Detalhes', { petSelecionado: petFormatado })}
+              pet={petFormatated}
+              onPress={() => navigation.navigate('Detalhes', { petSelecionado: petFormatated })}
             />
           );
         }}
@@ -89,7 +96,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F8F9FA', 
     paddingTop: 10,
-    paddingHorizontal: 15,
   },
   title: {
     fontSize: 24,
@@ -97,6 +103,13 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 8,
     textAlign: 'center'
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#666',
+    marginBottom: 24,
+    textAlign: 'center',
+    paddingHorizontal: 20
   },
   listaContainer: {
     paddingBottom: 20
