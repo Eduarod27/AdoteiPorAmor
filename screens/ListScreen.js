@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F8F9FA', 
     paddingTop: 10,
+    paddingHorizontal: 15,
   },
   title: {
     fontSize: 24,
@@ -96,13 +97,6 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 8,
     textAlign: 'center'
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666',
-    marginBottom: 24,
-    textAlign: 'center',
-    paddingHorizontal: 20
   },
   listaContainer: {
     paddingBottom: 20
