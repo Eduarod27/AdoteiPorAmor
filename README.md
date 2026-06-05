@@ -37,3 +37,4 @@ Foram implementados 3 sensores essenciais do dispositivo:
 
 * **Luiz Eduardo Lima Coimbra Vinhas** - Matrícula: 01803321
 * **Vinícius Costa** - Matrícula: 01796490
+* **Laryssa Eduarda Nascimento dos Santos** - Matrícula: 01814379
