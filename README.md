@@ -1,39 +1,50 @@
 # @adoteiporamor - Sistema de Adoção de Animais
 
-O **@adoteiporamor** é um aplicativo mobile desenvolvido em React Native para gerenciar e facilitar a adoção de animais, conectando de forma prática potenciais adotantes aos pets.
+O **@adoteiporamor** é um aplicativo mobile desenvolvido para gerenciar e facilitar a adoção de animais, conectando de forma prática potenciais adotantes aos pets.
 
-## Estrutura de Telas
+---
 
-O projeto é composto por 4 telas e fluxos principais:
+## 🛠️ Tecnologias Utilizadas
 
-* **Home**: Tela inicial com os destaques e apresentação da plataforma.
-* **Lista**: Listagem dinâmica de todos os animais disponíveis.
-* **Detalhes**: Informações completas do pet selecionado (porte, idade, descrição e contacto).
-* **Registro**: Formulário para o cadastro de novos animais.
-* **Perfil dos Animais**: Tela dedicada à exibição dos atributos específicos de cada pet.
+* **Framework Principal:** React Native
+* **Ambiente de Desenvolvimento:** Expo
+* **Armazenamento Local:** AsyncStorage (`@react-native-async-storage/async-storage`)
+* **Navegação:** React Navigation (Stack e Bottom Tabs)
+* **Manipulação de Listas:** React Native Gesture Handler
 
-## Funcionalidades Técnicas
+---
+
+## ⚙️ Funcionalidades Implementadas
+
+### Estrutura de Telas e Navegação
+O projeto é estruturado através de Stacks de Navegação e um menu de abas persistente no rodapé (footer), composto por 5 fluxos:
+* **Home:** Tela inicial com os destaques e apresentação da plataforma.
+* **Lista:** Listagem dinâmica e inteligente de todos os animais disponíveis.
+* **Detalhes:** Informações completas do pet selecionado (porte, idade, descrição e contato).
+* **Registro:** Formulário estruturado para o cadastro de novos animais.
+* **Perfil dos Animais:** Tela dedicada à exibição dos atributos específicos de cada pet.
 
 ### CRUD Funcional e Persistência
+* **Persistência de Dados:** Integração completa com o `AsyncStorage` para armazenamento local, permitindo salvar, carregar e deletar registros de forma permanente.
+* **Listagem Inteligente:** Os novos pets cadastrados são inseridos automaticamente no topo da listagem. A lista faz a intercalação dinâmica entre uma base de dados estática fixa e os novos registros salvos pelo usuário.
+* **Normalização Automática:** Validação inteligente da espécie informada (cão ou gato), aplicando automaticamente emojis decorativos no nome do animal, fotos padrões caso nenhuma imagem seja fornecida, preenchimento de porte padrão ("Médio") e formatação automatizada da string de idade.
 
-O aplicativo possui um CRUD funcional integrado com o `AsyncStorage` para armazenamento local e permanente. Os novos pets cadastrados no formulário são inseridos automaticamente no final da lista. O sistema também faz a validação inteligente da espécie (cão ou gato) para aplicar fotos e emojis padronizados de forma automática.
+---
 
-### Sensores Nativos Integrados
+## 🧠 Sensores Nativos Implementados
 
-Foram implementados 3 sensores essenciais do dispositivo:
+O aplicativo utiliza 3 sensores essenciais do dispositivo para enriquecer a experiência do usuário:
+1. **GPS:** Para localização e mapeamento geográfico dos animais e dos adotantes.
+2. **Imagens:** Integração nativa com a câmera ou galeria do aparelho para captura e exibição das fotos dos pets.
+3. **Rotação (Giroscópio/Acelerômetro):** Captura a orientação espacial do aparelho para realizar ajustes dinâmicos de layout conforme a inclinação do dispositivo.
 
-1. **GPS**: Para localização e mapeamento dos animais e adotantes.
-2. **Imagens**: Integração com a câmara ou galeria para exibição das fotos dos pets.
-3. **Rotação (Giroscópio/Acelerómetro)**: Captura a orientação espacial do aparelho para ajustes dinâmicos de layout.
+---
 
-### Componentes e Navegação
+## 🚀 Como Instalar e Executar
 
-**Componentização**: Interface construída com componentes reutilizáveis, destacando-se o **Card** (para exibição unificada dos dados do pet na lista) e o **Botão** customizado para ações e formulários.
- 
-**Navegação**: Estruturada através de Stacks de Navegação, permitindo o avanço, retorno de páginas e envio de parâmetros entre rotas. O aplicativo conta ainda com um menu de abas persistente no rodapé (footer) para alternância rápida entre as telas.
+Siga os passos abaixo para clonar, instalar as dependências e rodar o projeto em seu ambiente de desenvolvimento.
 
-## Integrantes do Projeto
-
-* **Luiz Eduardo Lima Coimbra Vinhas** - Matrícula: 01803321
-* **Vinícius Costa** - Matrícula: 01796490
-* **Laryssa Eduarda Nascimento dos Santos** - Matrícula: 01814379
+### Instalação das Dependências
+Abra o terminal na raiz do projeto e execute o comando abaixo para instalar todos os pacotes necessários:
+```bash
+npm install
