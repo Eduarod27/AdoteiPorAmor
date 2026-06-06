@@ -48,3 +48,22 @@ Siga os passos abaixo para clonar, instalar as dependências e rodar o projeto e
 Abra o terminal na raiz do projeto e execute o comando abaixo para instalar todos os pacotes necessários:
 ```bash
 npm install
+```
+
+### Execução do Projeto
+Para iniciar o servidor de desenvolvimento do Expo, execute:
+
+```bash
+npx expo start
+npm start
+
+```
+
+> **Dica:** Use o aplicativo **Expo Go** no seu celular físico para ler o QR Code gerado no terminal ou pressione `a` para rodar no emulador Android / `i` para o simulador iOS.
+
+
+## 👥 Integrantes do Projeto
+
+* **Luiz Eduardo Lima Coimbra Vinhas** - Matrícula: 01803321
+* **Vinícius Costa** - Matrícula: 01796490
+* **Laryssa Eduarda Nascimento dos Santos** - Matrícula: 01814379
